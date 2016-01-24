@@ -33,27 +33,27 @@
         
           <ul class="right hide-on-med-and-down">
              <% if user_signed_in? %>
-              <li><a href="sass.html">Sass</a></li>
-              <li><a href="badges.html">Components</a></li>
+              <li><a href="https://namu.wiki/w/%EB%A9%8B%EC%9F%81%EC%9D%B4%EC%82%AC%EC%9E%90%EC%B2%98%EB%9F%BC">멋쟁이 사자처럼이란?</a></li>
+              <li><a href="http://www.likelion.net/">멋쟁이 사자처럼 공식사이트</a></li>
               <li><a>환영합니다 <%= current_user.nickname %>님</a></li>
               <li><%= link_to "LOGOUT", destroy_user_session_path, :class => "black-text",method: 'delete' %></li>
           </ul>
           <ul class="side-nav" id="mobile-demo">
-              <li><a href="sass.html">Sass</a></li>
-              <li><a href="badges.html">Components</a></li>
+              <li><a href="https://namu.wiki/w/%EB%A9%8B%EC%9F%81%EC%9D%B4%EC%82%AC%EC%9E%90%EC%B2%98%EB%9F%BC">멋쟁이 사자처럼이란?</a></li>
+              <li><a href="http://www.likelion.net/">멋쟁이 사자처럼 공식사이트</a></li>
               <a href="#">환영합니다</a>
               <a href="#"><%= current_user.nickname %></a>
               <li><%= link_to "LOGOUT", destroy_user_session_path, :class => "black-text",method: 'delete' %></li>
              <% else %>
-              <li><a href="sass.html">Sass</a></li>
-              <li><a href="badges.html">Components</a></li>
+              <li><a href="https://namu.wiki/w/%EB%A9%8B%EC%9F%81%EC%9D%B4%EC%82%AC%EC%9E%90%EC%B2%98%EB%9F%BC">멋쟁이 사자처럼이란?</a></li>
+              <li><a href="http://www.likelion.net/">멋쟁이 사자처럼 공식사이트</a></li>
               <li><a href="/users/sign_in">로그인</a></li>
               <li><a href="/users/sign_up">회원가입</a></li>
             
           </ul>
              <ul class="side-nav" id="mobile-demo">
-              <li><a href="sass.html">Sass</a></li>
-              <li><a href="badges.html">Components</a></li>
+              <li><a href="https://namu.wiki/w/%EB%A9%8B%EC%9F%81%EC%9D%B4%EC%82%AC%EC%9E%90%EC%B2%98%EB%9F%BC">멋쟁이 사자처럼이란?</a></li>
+              <li><a href="http://www.likelion.net/">멋쟁이 사자처럼 공식사이트</a></li>
               <li><a href="/users/sign_in">로그인</a></li>
               <li><a href="/users/sign_up">회원가입</a></li>
              <% end %>
@@ -70,7 +70,10 @@
  <script>
           $( document ).ready(function(){})
            $(".button-collapse").sideNav();
-           
+              $(document).ready(function(){
+      $('.slider').slider({full_width: true});
+    });
+        
            </script>
   </body>
 </html>
