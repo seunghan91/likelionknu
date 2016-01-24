@@ -1,0 +1,70 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Posts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th>User</th>
+      <th>Title</th>
+      <th>Content</th>
+      <th>Published</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @posts.each do |post| %>
+      <tr>
+        <td><%= post.category %></td>
+        <td><%= post.user %></td>
+        <td><%= post.title %></td>
+        <td><%= post.content %></td>
+        <td><%= post.published %></td>
+        <td><%= link_to 'Show', post %></td>
+        <td><%= link_to 'Edit', edit_post_path(post) %></td>
+        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Post', new_post_path %>
+<script type='text/javascript' charset='utf-8'>
+ 
+  var disqusPublicKey, disqusShortname, urlArray;
+  disqusPublicKey = 'lNNgWB5hmfehoewoML06zuuHAaW2X3pRLF7bfx7zTRPQbHMDawZ0Oxi37oEyeQ9D';
+  disqusShortname = 'likelionnknu';
+  urlArray = [];
+  $('.comment-link-marker').each(function() {
+    var url;
+    url = $(this).attr('data-disqus-url');
+    urlArray.push('link:' + url);
+  });
+  $.ajax({
+    type: 'GET',
+    url: 'https://disqus.com/api/3.0/threads/set.jsonp',
+    data: {
+      api_key: disqusPublicKey,
+      forum: disqusShortname,
+      thread: urlArray
+    },
+    cache: false,
+    dataType: 'jsonp',
+    success: function(result) {
+      var count, countText, i;
+      for (i in result.response) {
+        countText = '댓글 ';
+        count = result.response[i].posts;
+        if (count === 1) {
+          countText = '댓글 ';
+        }
+        $('a[data-disqus-url="' + result.response[i].link + '"]').html( count > 0 ? "<small>("; + countText + count + ")</small>" : "");
+      }
+    }
+  });
+ 
+</script>
