@@ -24,38 +24,63 @@
   </head>
 
   <body>
+   
+   
+   
      <nav class="white" role="navigation">
      <div class="nav-wrapper container">
            <a id="logo-container" href="/home/index" class="brand-logo">멋쟁이사자처럼</a>
            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
           <!-- <a id="logo-container" href="https://www.facebook.com/멋쟁이사자처럼-at-강원대학교-465239337010158/?notif_t=page_user_activity" 
           class="brand-logo"><img src="IMG/1.png" alt="1.png"><p> </a> -->
-        
+        <!-- Dropdown Structure -->
+
           <ul class="right hide-on-med-and-down">
              <% if user_signed_in? %>
               <li><a href="https://namu.wiki/w/%EB%A9%8B%EC%9F%81%EC%9D%B4%EC%82%AC%EC%9E%90%EC%B2%98%EB%9F%BC">멋쟁이 사자처럼이란?</a></li>
               <li><a href="http://www.likelion.net/">멋쟁이 사자처럼 공식사이트</a></li>
-              <li><a>환영합니다 <%= current_user.nickname %>님</a></li>
-              <li><%= link_to "LOGOUT", destroy_user_session_path, :class => "black-text",method: 'delete' %></li>
+              <li><a class="dropdown-button" href="#!" data-activates="dropdown1">환영합니다 <%= current_user.nickname %>님<i class="material-icons right">arrow_drop_down</i></a></li>
+              <ul id="dropdown1" class="dropdown-content">
+               <li><%= link_to "개인정보수정", edit_user_registration_path, :class => "black-text",method: 'delete' %></li>
+               <!--<li><a href="#!">two</a></li>-->
+               <li class="divider"></li>
+               <li><%= link_to "LOG OUT", destroy_user_session_path, :class => "black-text",method: 'delete' %></li>
+             </ul>
           </ul>
           <ul class="side-nav" id="mobile-demo">
-              <li><a href="https://namu.wiki/w/%EB%A9%8B%EC%9F%81%EC%9D%B4%EC%82%AC%EC%9E%90%EC%B2%98%EB%9F%BC">멋쟁이 사자처럼이란?</a></li>
               <li><a href="http://www.likelion.net/">멋쟁이 사자처럼 공식사이트</a></li>
+              <li><a href="https://namu.wiki/w/%EB%A9%8B%EC%9F%81%EC%9D%B4%EC%82%AC%EC%9E%90%EC%B2%98%EB%9F%BC">멋쟁이 사자처럼이란?</a></li>
+              <li class="divider"></li>
+              <li><a href="http://home.kangwon.ac.kr/kangwon/boardUser/bbs_list.jsp?mbsId=7&curr_page=1&search=&column=1&categoryId=">강원대학교 공지사항</a></li>
+              <li><a href="http://m.cafe.daum.net/kangwonlike">강대라이크</a></li>
+              <li class="divider"></li>
               <a href="#">환영합니다</a>
-              <a href="#"><%= current_user.nickname %></a>
-              <li><%= link_to "LOGOUT", destroy_user_session_path, :class => "black-text",method: 'delete' %></li>
+              <a href="#"><%= current_user.nickname %>님</a>
+              <li class="divider"></li>
+              <li><%= link_to "개인정보수정", edit_user_registration_path, :class => "black-text",method: 'delete' %></li>
+              <li class="divider"></li>
+              <li><%= link_to "LOG OUT", destroy_user_session_path, :class => "black-text",method: 'delete' %></li>
              <% else %>
-              <li><a href="https://namu.wiki/w/%EB%A9%8B%EC%9F%81%EC%9D%B4%EC%82%AC%EC%9E%90%EC%B2%98%EB%9F%BC">멋쟁이 사자처럼이란?</a></li>
               <li><a href="http://www.likelion.net/">멋쟁이 사자처럼 공식사이트</a></li>
+              <li><a href="https://namu.wiki/w/%EB%A9%8B%EC%9F%81%EC%9D%B4%EC%82%AC%EC%9E%90%EC%B2%98%EB%9F%BC">멋쟁이 사자처럼이란?</a></li>
+              <li class="divider"></li>
               <li><a href="/users/sign_in">로그인</a></li>
               <li><a href="/users/sign_up">회원가입</a></li>
+              <li class="divider"></li>
+              <li><a href="http://home.kangwon.ac.kr/kangwon/boardUser/bbs_list.jsp?mbsId=7&curr_page=1&search=&column=1&categoryId=">강원대학교 공지사항</a></li>
+              <li><a href="http://m.cafe.daum.net/kangwonlike">강대라이크</a></li>
             
           </ul>
              <ul class="side-nav" id="mobile-demo">
-              <li><a href="https://namu.wiki/w/%EB%A9%8B%EC%9F%81%EC%9D%B4%EC%82%AC%EC%9E%90%EC%B2%98%EB%9F%BC">멋쟁이 사자처럼이란?</a></li>
               <li><a href="http://www.likelion.net/">멋쟁이 사자처럼 공식사이트</a></li>
+              <li><a href="https://namu.wiki/w/%EB%A9%8B%EC%9F%81%EC%9D%B4%EC%82%AC%EC%9E%90%EC%B2%98%EB%9F%BC">멋쟁이 사자처럼이란?</a></li>
+              <li class="divider"></li>
               <li><a href="/users/sign_in">로그인</a></li>
               <li><a href="/users/sign_up">회원가입</a></li>
+              <li class="divider"></li>
+              <li><a href="http://home.kangwon.ac.kr/kangwon/boardUser/bbs_list.jsp?mbsId=7&curr_page=1&search=&column=1&categoryId=">강원대학교 공지사항</a></li>
+              <li><a href="http://m.cafe.daum.net/kangwonlike">강대라이크</a></li>
+              
              <% end %>
           </ul>
       </div>
@@ -72,8 +97,11 @@
            $(".button-collapse").sideNav();
               $(document).ready(function(){
       $('.slider').slider({full_width: true});
+     
     });
-        
+        $(document).ready(function(){
+          $(".dropdown-button").dropdown();
+        });
            </script>
   </body>
 </html>
