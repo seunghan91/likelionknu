@@ -14,7 +14,7 @@
       <!--Import materialize.css-->
       <link type="text/css" rel="stylesheet" href="/assets/stylesheets/materialize.css"  media="screen,projection"/>
       <link href="/assets/stylesheets/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-
+     <script id="facebook-jssdk" src="//connect.facebook.net/en_US/sdk.js"></script>
     <title><%= content_for?(:title) ? yield(:title) : "멋쟁이사자처럼 at 강원대학교" %></title>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -67,8 +67,8 @@
               <li><a href="/users/sign_in">로그인</a></li>
               <li><a href="/users/sign_up">회원가입</a></li>
               <li class="divider"></li>
-              <li><a href="http://home.kangwon.ac.kr/kangwon/boardUser/bbs_list.jsp?mbsId=7&curr_page=1&search=&column=1&categoryId=">강원대학교 공지사항</a></li>
-              <li><a href="http://m.cafe.daum.net/kangwonlike">강대라이크</a></li>
+             <!-- <li><a href="http://home.kangwon.ac.kr/kangwon/boardUser/bbs_list.jsp?mbsId=7&curr_page=1&search=&column=1&categoryId=">강원대학교 공지사항</a></li>
+              <li><a href="http://m.cafe.daum.net/kangwonlike">강대라이크</a></li> -->
             
           </ul>
              <ul class="side-nav" id="mobile-demo">

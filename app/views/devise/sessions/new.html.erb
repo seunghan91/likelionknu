@@ -1,3 +1,4 @@
+<!-- log in-->
 <div class="container">
 <h2>Log in</h2>
 
@@ -12,6 +13,11 @@
     <%= f.button :submit, "Log in" %>
   </div>
 <% end %>
+<script>
 
+$(document).ready(function() {
+    Materialize.toast("로그인하거나 회원가입하세요.", 4000)
+});
+</script>
 <%= render "devise/shared/links" %>
 </div>

@@ -1,3 +1,5 @@
+<!-- 회원가입 -->
+
 <div class="container">
 
 <h2>Sign up</h2>
@@ -17,7 +19,12 @@
     <%= f.button :submit, "Sign up" %>
   </div>
 <% end %>
+<script>
 
+$(document).ready(function() {
+    Materialize.toast("가입 비밀번호는 암호화처리되어 저장됩니다.", 4000)
+});
+</script>
 <%= render "devise/shared/links" %>
 
 </div>
